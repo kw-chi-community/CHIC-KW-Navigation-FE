@@ -1,27 +1,21 @@
-// src/App.jsx
-import { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SplashScreen from './components/SplashScreen';
 import HomePage from './pages/HomePage';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true);
-
-  useEffect(() => {
-    // 3초 후 스플래시 화면 종료
-    const timer = setTimeout(() => setShowSplash(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <Router>
-      {showSplash ? (
-        <SplashScreen />
-      ) : (
+      <div className="min-h-screen bg-[#7D170A] flex flex-col items-center text-white">
+        <Header />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<SplashScreen />} />
+          <Route path="/home" element={<HomePage />} />
         </Routes>
-      )}
+        <Navbar />
+      </div>
     </Router>
   );
 }

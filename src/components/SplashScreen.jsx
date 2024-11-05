@@ -1,10 +1,19 @@
-// src/components/SplashScreen.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import kwIcon from '../assets/kwIcon.svg';
 
-const SplashScreen = () => (
-  <div className="flex items-center justify-center h-screen bg-gray-900">
-    <h1 className="text-4xl text-white font-bold animate-bounce">광운대학교 시설 내비게이션 ^-^</h1>
-  </div>
-);
+function SplashScreen() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setTimeout(() => navigate('/home'), 3000); // 3초 후 홈 페이지로 이동
+  }, [navigate]);
+
+  return (
+    <div className="h-full w-full flex items-center justify-center text-white" style={{ backgroundColor: '#7D170A' }}>
+      <img src={kwIcon} alt="KwLogo" className="w-32 h-32" />
+    </div>
+  );
+}
 
 export default SplashScreen;
