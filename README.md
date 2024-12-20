@@ -1,43 +1,50 @@
-## **방과후에 뭐하니?**
+# React + TypeScript + Vite
 
----
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-### **주제**
+Currently, two official plugins are available:
 
-방과후 청소년에게 적합한 체육 활동을 추천하여 스포츠 강좌 이용권(청소년)의 활용도 증진을 목표로 하는 시스템.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
----
+## Expanding the ESLint configuration
 
-### **목표**
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-1. **체육 활동 추천**: 방과후 학생들이 자신에게 맞는 체육 활동을 통해 스트레스 해소 및 체력 증진을 도모함.
-2. **스포츠 강좌 이용권 구독 촉진**: 추천 시스템을 통해 더 많은 학생들이 스포츠 강좌 이용권을 활용하도록 유도, 구독률 증대.
+- Configure the top-level `parserOptions` property like this:
 
----
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-### **시스템 구성 요소 및 기능**
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-### 1. **사용자 정보 수집**
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
 
-- **신체 데이터**: 키, 몸무게, 체지방률 등 신체 정보 입력.
-- **성향 데이터**: 좋아하는 운동 유형, 활동 선호도 등 개인 성향 데이터 수집.
-
-### 2. **머신러닝 기반 맞춤 추천**
-
-- 사용자 신체 데이터와 성향 데이터를 바탕으로 머신러닝 알고리즘을 통해 개인 맞춤형 체육 활동 추천.
-- 추천된 활동이 스포츠 강좌 이용권을 활용할 수 있는 프로그램과 매칭되도록 구성.
-
-### 3. **활동 기록 및 피드백 시스템**
-
-- 추천받은 체육 활동의 참여 기록 저장 및 관리.
-- 활동 후 피드백을 받아 머신러닝 모델에 반영, 추천의 정확도 향상.
-
-### 4. **결과 분석 및 통계**
-
-- 사용자들이 가장 선호하는 체육 활동과 참여 빈도 등 데이터를 분석하여, 스포츠 강좌 이용권 구독 향상을 위한 인사이트 도출.
-
----
-
-### **활용 방안**
-
-수업이 끝난 후 학생들이 추천된 체육 활동을 체험하도록 유도, 이를 통해 스포츠 강좌 이용권 구독 비율 증가 및 청소년 건강 증진에 기여.
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```
