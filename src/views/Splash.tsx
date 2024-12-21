@@ -13,7 +13,7 @@ function Splash() {
   }, [navigate]);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-white">
+    <div className="container flex flex-col items-center justify-center h-screen bg-white">
       <img src="/KWnavi.svg" alt="KW Navi Logo" className="w-32 h-32 mb-4" />
 
       <div className="text-center">
