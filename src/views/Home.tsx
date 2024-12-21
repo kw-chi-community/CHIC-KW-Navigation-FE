@@ -1,4 +1,4 @@
-const MobileComponent = () => {
+const Home = () => {
   return (
     <div className="container">
       <h1>모바일 컴포넌트</h1>
@@ -6,4 +6,4 @@ const MobileComponent = () => {
   );
 };
 
-export default MobileComponent;
+export default Home;
