@@ -45,7 +45,7 @@ export const BottomModal = ({ isOpen, onClose, children }: BottomModalPT) => {
 
       {/* Modal */}
       <div
-        className="fixed inset-x-0 bottom-0 bg-white rounded-t-3xl shadow-lg max-w-md mx-auto"
+        className="fixed inset-x-0 bottom-0 bg-white rounded-t-3xl shadow-lg max-w-[400px] mx-auto"
         style={{
           transform: `translateY(${translateY}px)`,
         }}
