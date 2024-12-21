@@ -44,13 +44,13 @@ export const ModalHeader = ({ children, className }: ModalHeaderPT) => {
 	)
 }
 
-// Modal Context
-type ModalContextPT = {
+// Modal content
+type ModalcontentPT = {
 	children: ReactNode
 	className?: string
 }
 
-export const ModalContext = ({ children, className }: ModalContextPT) => {
+export const Modalcontent = ({ children, className }: ModalcontentPT) => {
 	return <div className={`p-4 ${className || ""}`}>{children}</div>
 }
 
