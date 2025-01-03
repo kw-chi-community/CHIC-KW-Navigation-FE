@@ -18,7 +18,7 @@ const navItems = [
   },
 ];
 
-function Navbar() {
+export default function Navbar() {
   return (
     <div className="container fixed bottom-0 left-0 right-0 h-[8vh] bg-white shadow-lg border-t">
       <nav className="flex justify-around items-center py-3 w-full max-w-lg mx-auto">
@@ -35,5 +35,3 @@ function Navbar() {
     </div>
   );
 }
-
-export default Navbar;

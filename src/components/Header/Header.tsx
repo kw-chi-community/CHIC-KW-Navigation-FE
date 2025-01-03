@@ -1,6 +1,6 @@
 import { ChevronLeft } from "lucide-react";
 
-function Header() {
+export default function Header() {
   return (
     <div className="container fixed top-0 left-0 right-0 h-[7vh] bg-[#7D170A] flex items-center justify-between px-4 text-white shadow-md z-20">
 
@@ -17,4 +17,3 @@ function Header() {
   );
 }
 
-export default Header;

@@ -37,13 +37,11 @@ export const BottomModal = ({ isOpen, onClose, children }: BottomModalPT) => {
 
   return (
     <>
-      {/* Overlay */}
       <div
         className="fixed inset-0 bg-black bg-opacity-50"
         onClick={onClose}
       ></div>
 
-      {/* Modal */}
       <div
         className="fixed inset-x-0 bottom-0 bg-white rounded-t-3xl shadow-lg max-w-[400px] mx-auto"
         style={{
@@ -53,7 +51,6 @@ export const BottomModal = ({ isOpen, onClose, children }: BottomModalPT) => {
         onTouchMove={handleDragMove}
         onTouchEnd={handleDragEnd}
       >
-        {/* Drag Bar */}
         <div className="w-16 h-1 bg-gray-300 rounded-full mx-auto mt-2"></div>
         {children}
       </div>
