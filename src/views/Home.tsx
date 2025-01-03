@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ExModal from "../components/Modal/ExModal/ExModal";
-import Header from "@/components/Header/Header";
+import ExModal from "../components/common/Modal/ExModal/ExModal";
+import Header from "@/components/layout/Header/Header";
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

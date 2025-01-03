@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "./Navbar";
-import Header from "./Header/Header";
+import Navbar from "./layout/Navbar";
+import Header from "./layout/Header/Header";
 
 type LayoutPT = {
   children: React.ReactNode;
