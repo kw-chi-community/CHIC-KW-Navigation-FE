@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Splash() {
+export default function Splash() {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,5 +23,3 @@ function Splash() {
     </div>
   );
 }
-
-export default Splash;
