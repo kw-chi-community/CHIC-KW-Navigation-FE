@@ -1,13 +1,14 @@
 import { useState } from "react";
 import ExModal from "../components/common/Modal/ExModal/ExModal";
-import Header from "@/components/layout/Header/Header";
+import MainPageHeader from "@/components/layout/Header/MainPageHeader";
+
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="container h-[100vh] flex flex-col items-center justify-center bg-white text-white">
-      <Header />
+      <MainPageHeader />
       <h1 className="text-3xl font-bold mb-6 animate-bounce text-black">광운 내비게이션</h1>
 
       <button

@@ -8,7 +8,6 @@ export default function Splash() {
     const timer = setTimeout(() => {
       navigate("./Home");
     }, 3500);
-
     return () => clearTimeout(timer);
   }, [navigate]);
 
