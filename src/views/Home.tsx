@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ExModal from "../components/common/Modal/ExModal/ExModal";
 import MainPageHeader from "@/components/layout/Header/MainPageHeader";
+import Navbar from "@/components/layout/Navbar";
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
         모달 열기
       </button>
       <ExModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+        <Navbar />
     </div>
   );
 };
