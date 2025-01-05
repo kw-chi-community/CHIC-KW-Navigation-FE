@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Splash from "./views/Splash";
 import Home from "./views/Home";
-import Login from "./views/Login";
+import LoginPage from "./views/LoginPage";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         {/* 홈 화면 */}
         <Route path="/Home" element={<Home />} />
         {/* 로그인 화면 */}
-        <Route path="/Login" element={<Login />} />
+        <Route path="/LoginPage" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   );
