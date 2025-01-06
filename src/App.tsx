@@ -13,8 +13,6 @@ function App() {
         <Route path="/Home" element={<Home />} />
         {/* 로그인 화면 */}
         <Route path="/LoginPage" element={<LoginPage />} />
-        {/* 모달 화면 */}
-        <Route path="/Modal" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   );
