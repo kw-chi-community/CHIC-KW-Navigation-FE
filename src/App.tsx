@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Splash from "./views/Splash";
 import Home from "./views/Home";
+import LoginPage from "./views/LoginPage";
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
         <Route path="/" element={<Splash />} />
         {/* 홈 화면 */}
         <Route path="/Home" element={<Home />} />
+        {/* 로그인 화면 */}
+        <Route path="/LoginPage" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   );

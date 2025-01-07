@@ -1,22 +1,34 @@
-import { useState } from "react";
-import ExModal from "../components/common/Modal/ExModal/ExModal";
-import Header from "@/components/layout/Header/Header";
+import MainPageHeader from "@/components/layout/Header/MainPageHeader";
+import Navbar from "@/components/layout/Navbar";
+import FrequentlyVisited from "@/features/components/Home/FrequentlyVisited";
+import HomeMap from "@/features/components/Home/HomeMap";
+import TodayNews from "@/features/components/Home/TodayNews";
 
 const Home = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
-    <div className="container h-[100vh] flex flex-col items-center justify-center bg-white text-white">
-      <Header />
-      <h1 className="text-3xl font-bold mb-6 animate-bounce text-black">광운 내비게이션</h1>
+    <div className="container h-[100vh] bg-white text-black">
+      <MainPageHeader />
 
-      <button
-        onClick={() => setIsModalOpen(true)}
-        className="bg-red-800 text-white px-6 py-2 rounded-lg shadow-lg  hover:rotate-3 hover:scale-105 transition-all duration-300"
-      >
-        모달 열기
-      </button>
-      <ExModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <div className="flex flex-col items-center w-full pt-[4rem] pb-[8rem] space-y-8">
+        <HomeMap />
+
+        <div className="container">
+
+        <h1 className="text-left w-full px-4 text-lg font-bold">
+          오늘의 광운대 소식
+        </h1>
+        <TodayNews />
+        </div>
+          <div className="container">
+        <h1 className="text-left w-full px-4 text-lg font-bold">
+          자주 방문하는 장소
+        </h1>
+        <FrequentlyVisited />
+        </div>
+        
+      </div>
+
+      <Navbar />
     </div>
   );
 };
