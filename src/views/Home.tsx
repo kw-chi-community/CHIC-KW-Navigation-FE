@@ -1,6 +1,6 @@
 import MainPageHeader from "@/components/layout/Header/MainPageHeader";
-import Navbar from "@/components/layout/Navbar";
-import FrequentlyVisited from "@/features/components/Home/FrequentlyVisited";
+
+import BuildingInfo from "@/features/components/Home/BuildingInfo";
 import HomeMap from "@/features/components/Home/HomeMap";
 import TodayNews from "@/features/components/Home/TodayNews";
 
@@ -21,14 +21,13 @@ const Home = () => {
         </div>
           <div className="container">
         <h1 className="text-left w-full px-4 text-lg font-bold">
-          자주 방문하는 장소
+          건물 소개
         </h1>
-        <FrequentlyVisited />
+        <BuildingInfo />
         </div>
         
       </div>
 
-      <Navbar />
     </div>
   );
 };
