@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ModalBase from "./ModalBase";
+import ModalBase from "../ModalBase/ModalBase";
 
 interface ModalPaginationProps {
   isOpen: boolean; // 모달의 열림/닫힘 상태

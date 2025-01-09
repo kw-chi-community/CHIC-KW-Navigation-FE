@@ -3,7 +3,7 @@ import {
   BottomModalHeader,
   BottomModalContent,
   BottomModalFooter,
-} from "../BottomModal";
+} from "../ModalPagination/BottomModal";
 import { Store, CreditCard, Utensils, Sofa, Bell, Settings } from "lucide-react";
 
 export default function ExModal({

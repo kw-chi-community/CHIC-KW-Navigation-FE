@@ -1,25 +1,41 @@
 import React, { createContext, useContext, useState } from "react";
 
 interface ModalContextProps {
-  isModalOpen: boolean;
-  openModal: () => void;
-  closeModal: () => void;
+  isModalBaseOpen: boolean;
+  isModalWithPaginationOpen: boolean;
+  openModalBase: () => void;
+  closeModalBase: () => void;
+  openModalWithPagination: () => void;
+  closeModalWithPagination: () => void;
 }
 
-const ModalContext = createContext<ModalContextProps | undefined>(undefined);
+export const ModalContext = createContext<ModalContextProps | undefined>(undefined);
 
-export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+export default function ModalProvider({ children }: { children: React.ReactNode }) {
+  const [isModalBaseOpen, setIsModalBaseOpen] = useState(false);
+  const [isModalWithPaginationOpen, setIsModalWithPaginationOpen] = useState(false);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openModalBase = () => setIsModalBaseOpen(true);
+  const closeModalBase = () => setIsModalBaseOpen(false);
+
+  const openModalWithPagination = () => setIsModalWithPaginationOpen(true);
+  const closeModalWithPagination = () => setIsModalWithPaginationOpen(false);
 
   return (
-    <ModalContext.Provider value={{ isModalOpen, openModal, closeModal }}>
+    <ModalContext.Provider
+      value={{
+        isModalBaseOpen,
+        isModalWithPaginationOpen,
+        openModalBase,
+        closeModalBase,
+        openModalWithPagination,
+        closeModalWithPagination,
+      }}
+    >
       {children}
     </ModalContext.Provider>
   );
-};
+}
 
 export const useModalContext = () => {
   const context = useContext(ModalContext);
