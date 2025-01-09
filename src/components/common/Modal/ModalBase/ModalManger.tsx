@@ -19,12 +19,12 @@ export default function ModalManager() {
       <ModalWithPagination
         isOpen={isModalWithPaginationOpen}
         closeModal={closeModalWithPagination}
-        title="Item 9 Pagination"
+        title="새빛관 소개"
         images={[
-          "https://via.placeholder.com/300x200?text=Image+1",
-          "https://via.placeholder.com/300x200?text=Image+2",
+          "https://www.kw.ac.kr/ko/img/tour01_27.jpg",
+          "https://aicon.kw.ac.kr/img/engineering_certify/classroom01.gif",
         ]}
-        description="This is a modal with pagination for Item 9."
+        description="This is my house."
       />
     </>
   );

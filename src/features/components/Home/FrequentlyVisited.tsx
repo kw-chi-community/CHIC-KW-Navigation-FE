@@ -1,5 +1,5 @@
 import React from "react";
-import useModal from "../../../hooks/modal/useModal"; // 경로 수정
+import useModal from "../../../hooks/modal/useModal";
 
 export default function FrequentlyVisited() {
   const { openModalBase, openModalWithPagination } = useModal();
