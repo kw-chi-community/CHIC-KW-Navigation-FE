@@ -1,8 +1,6 @@
 import React from "react";
 
-export default function ModalFooter({
-  closeModal,
-}: ModalFooterProps) {
+export default function ModalFooter({ closeModal }: ModalFooterProps) {
   return (
     <div className="flex justify-end px-4 mt-4 pb-6">
       <button
