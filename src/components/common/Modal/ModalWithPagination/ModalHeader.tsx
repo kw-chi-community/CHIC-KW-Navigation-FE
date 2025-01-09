@@ -1,4 +1,5 @@
 import React from "react";
+import { AiOutlineClose } from "react-icons/ai"; // react-icons 라이브러리에서 아이콘 가져오기
 
 export default function ModalHeader({
   title,
@@ -11,7 +12,7 @@ export default function ModalHeader({
         onClick={closeModal}
         className="text-gray-500 hover:text-gray-700 text-xl font-bold"
       >
-        X
+        <AiOutlineClose /> {/* 아이콘 사용 */}
       </button>
     </div>
   );
