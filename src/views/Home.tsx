@@ -29,19 +29,17 @@ export default function Home() {
 
           {/* 자주 방문하는 장소 */}
           <div className="container">
-            <h1 className="text-left w-full px-4 text-lg font-bold">
-              자주 방문하는 장소
-            </h1>
-            <FrequentlyVisited />
-          </div>
+        <h1 className="text-left w-full px-4 text-lg font-bold">
+          자주 방문하는 장소
+        </h1>
+        <FrequentlyVisited />
         </div>
 
         {/* 하단 네비게이션 */}
         <Navbar />
       </div>
 
-      {/* 모달 렌더링 */}
-      <ModalManager />
-    </ModalProvider>
+      <Navbar />
+    </div>
   );
 }
