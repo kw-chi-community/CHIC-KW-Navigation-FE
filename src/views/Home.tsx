@@ -40,6 +40,9 @@ export default function Home() {
       </div>
 
       <Navbar />
-    </div>
+      </div>
+      <ModalManager />
+    </ModalProvider>
+
   );
 }
