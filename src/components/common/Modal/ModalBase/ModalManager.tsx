@@ -1,4 +1,3 @@
-import React from "react";
 import ModalBase from "./ModalBase";
 import ModalWithPagination from "../ModalWithPagination/ModalWithPagination";
 import { useModalContext } from "./ModalContext";

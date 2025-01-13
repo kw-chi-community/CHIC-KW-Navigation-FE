@@ -1,4 +1,3 @@
-import React from "react";
 import { AiOutlineClose } from "react-icons/ai"; // react-icons 라이브러리에서 아이콘 가져오기
 
 export default function ModalHeader({
