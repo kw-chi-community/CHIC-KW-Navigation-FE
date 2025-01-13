@@ -1,11 +1,10 @@
-import React from "react";
-import ModalProvider from "../components/common/Modal/ModalBase/ModalContext";
-import ModalManager from "../components/common/Modal/ModalBase/ModalManger"; 
-import MainPageHeader from "../components/layout/Header/MainPageHeader";
-import Navbar from "../components/layout/Navbar";
-import FrequentlyVisited from "../features/components/Home/FrequentlyVisited";
-import HomeMap from "../features/components/Home/HomeMap";
-import TodayNews from "../features/components/Home/TodayNews";
+import ModalProvider from "@/components/common/Modal/ModalBase/ModalContext";
+import ModalManager from "@/components/common/Modal/ModalBase/ModalManager";
+import MainPageHeader from "@/components/layout/Header/MainPageHeader";
+import Navbar from "@/components/layout/Navbar";
+import FrequentlyVisited from "@/features/components/Home/FrequentlyVisited";
+import HomeMap from "@/features/components/Home/HomeMap";
+import TodayNews from "@/features/components/Home/TodayNews";
 
 export default function Home() {
   return (
