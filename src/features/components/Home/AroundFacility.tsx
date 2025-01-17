@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 export default function Facilities() {
   const navigate = useNavigate();
 
-  const facilities = [
-    { id: 1, label: "편의점", icon: "/path/to/store-icon.svg", path: "/around-shop/convenience-store" },
-    { id: 2, label: "카페", icon: "/path/to/cafe-icon.svg", path: "/around-shop/cafe" },
-    { id: 3, label: "식당", icon: "/path/to/restaurant-icon.svg", path: "/around-shop/restaurant" },
-    { id: 4, label: "편의시설", icon: "/path/to/facility-icon.svg", path: "/around-shop/amenity" },
-  ];
+const facilities = [
+  { id: 1, label: "편의점", icon: "/assets/icons/convenience-store.svg", path: "/around-shop/convenience-store" },
+  { id: 2, label: "카페", icon: "/assets/icons/cafe.svg", path: "/around-shop/cafe" },
+  { id: 3, label: "식당", icon: "/assets/icons/restaurant.svg", path: "/around-shop/restaurant" },
+  { id: 4, label: "편의시설", icon: "/assets/icons/path.svg", path: "/around-shop/amenity" },
+];
 
   return (
     <div className="flex justify-between items-center space-x-4 mx-auto max-w-[400px] px-4">
