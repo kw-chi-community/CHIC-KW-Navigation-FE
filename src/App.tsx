@@ -7,6 +7,7 @@ import AmenityPage from "@/views/AroundShop/AmenityPage";
 import CafePage from "@/views/AroundShop/CafePage";
 import ConveniencePage from "@/views/AroundShop/ConveniencePage";
 import RestaurantPage from "@/views/AroundShop/RestaurantPage";
+import QuestionPage from "./views/RouteQuestion/QuestionPage";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Route path="/around-shop/cafe" element={<CafePage />} />
         <Route path="/around-shop/convenience-store" element={<ConveniencePage />} />
         <Route path="/around-shop/restaurant" element={<RestaurantPage />} />
+
+        <Route path="/route/question" element={<QuestionPage />} />
       </Routes>
     </BrowserRouter>
   );
