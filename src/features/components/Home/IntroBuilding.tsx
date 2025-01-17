@@ -1,7 +1,6 @@
-import React from "react";
 import useModal from "../../../hooks/modal/useModal";
 
-export default function FrequentlyVisited() {
+export default function IntroBuilding() {
   const { openModalBase, openModalWithPagination } = useModal();
   const items = Array.from({ length: 10 }, (_, i) => `Item ${i + 1}`);
 
