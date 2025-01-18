@@ -53,12 +53,6 @@ export default function MainPageHeader() {
         >
           {isExpanded ? <ChevronUp /> : <ChevronDown />}
         </button>
-        <button
-          className="ml-2 text-sm text-[#800000] underline flex items-center"
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
-          {isExpanded ? <ChevronUp /> : <ChevronDown />}
-        </button>
       </div>
     </header>
   );
