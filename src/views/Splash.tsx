@@ -6,17 +6,17 @@ export default function Splash() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate("./Home");
+      navigate("./main-page");
     }, 3500);
     return () => clearTimeout(timer);
   }, [navigate]);
 
   return (
-    <div className="h-screen w-screen flex items-center justify-center overflow-hidden container">
+    <div className="h-screen w-screen flex items-center justify-center overflow-hidden container bg-black">
       <img
         src="/assets/SplashRed.svg"
         alt="Splash Screen"
-        className="h-full w-full object-cover"
+        className="h-full w-full object-contain"
       />
     </div>
   );
