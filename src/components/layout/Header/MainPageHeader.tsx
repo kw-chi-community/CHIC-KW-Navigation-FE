@@ -11,7 +11,7 @@ export default function MainPageHeader() {
         />
       </div>
       <div className="flex items-center space-x-4">
-        <div className="flex items-center space-x-2 border border-[#800000] rounded-full px-4 py-2">
+        <div className="w-[250px] flex items-center space-x-2 border border-[#800000] rounded-full px-2 py-2">
           <input
             type="text"
             placeholder="목적지를 입력하세요"
