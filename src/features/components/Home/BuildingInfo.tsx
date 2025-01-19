@@ -1,6 +1,8 @@
 import { useState } from "react";
 import ModalWithPagination from "@/components/common/Modal/ModalWithPagination/ModalWithPagination";
 import buildingList from "@/features/components/mocks/buildings";
+import { Building } from "@/components/types/Buildings";
+
 
 export default function BuildingInfo() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -36,7 +38,7 @@ export default function BuildingInfo() {
           isOpen={isModalOpen}
           closeModal={closeModal}
           title={selectedBuilding.name.ko}
-          image={selectedBuilding.image} // 단일 이미지 전달
+          image={selectedBuilding.image}
           description={{
             page1: selectedBuilding.description.ko.page1,
             page2: selectedBuilding.description.ko.page2,
@@ -45,23 +47,4 @@ export default function BuildingInfo() {
       )}
     </div>
   );
-}
-
-interface Building {
-  id: number;
-  name: {
-    ko: string;
-    en: string;
-  };
-  description: {
-    ko: {
-      page1: string;
-      page2: string;
-    };
-    en: {
-      page1: string;
-      page2: string;
-    };
-  };
-  image: string;
 }
