@@ -1,18 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { X, Search } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import type { Tab } from "@/components/types/AroundShopHeader";
 
 export default function AroundShopHeader() {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState<string>("restaurant");
+  const location = useLocation();
+  const [activeTab, setActiveTab] = useState<string>("");
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const tabs: Tab[] = [
     { id: "convenience-store", label: "편의점", path: "/around-shop/convenience-store" },
     { id: "cafe", label: "카페", path: "/around-shop/cafe" },
     { id: "restaurant", label: "식당", path: "/around-shop/restaurant" },
     { id: "amenity", label: "편의시설", path: "/around-shop/amenity" },
   ];
+
+  useEffect(() => {
+    const currentTab = tabs.find((tab) => location.pathname === tab.path);
+    if (currentTab) {
+      setActiveTab(currentTab.id);
+    }
+  }, [location, tabs]);
 
   const handleTabClick = (tab: Tab) => {
     setActiveTab(tab.id);
@@ -45,7 +54,7 @@ export default function AroundShopHeader() {
               {tab.label}
             </span>
             <div
-              className={`mt-1 h-[2px] ${
+              className={`mt-1 h-[2px] mx-2 ${
                 activeTab === tab.id ? "bg-black" : "bg-transparent"
               }`}
             ></div>
