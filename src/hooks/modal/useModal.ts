@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ModalContext } from "../../components/common/Modal/ModalBase/ModalContext";
+import { ModalContext } from "@/components/common/Modal/ModalBase/ModalContext";
 
 export default function useModal() {
   const context = useContext(ModalContext);
