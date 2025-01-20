@@ -21,7 +21,7 @@ export default function MainPageHeader() {
       </div>
 
       <div className="flex items-center">
-        <div className="flex flex-col w-[250px] space-y-2">
+        <div className="pl-2 flex flex-col w-[60vw] space-y-2">
           {isExpanded && (
             <div className="flex items-center w-full border border-[#800000] rounded-lg px-3 py-2">
               <input

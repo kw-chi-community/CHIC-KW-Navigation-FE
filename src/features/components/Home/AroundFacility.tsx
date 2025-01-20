@@ -11,7 +11,7 @@ const facilities = [
 ];
 
   return (
-    <div className="flex justify-between items-center space-x-4 mx-auto max-w-[400px] px-4">
+    <div className="flex justify-between items-center space-x-4 mx-auto max-w-[400px] px-4 overflow-y-hidden scrollbar-hide">
       {facilities.map((facility) => (
         <div
           key={facility.id}
