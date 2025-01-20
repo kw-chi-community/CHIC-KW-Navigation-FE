@@ -1,5 +1,5 @@
 import ModalProvider from "@/components/common/Modal/ModalBase/ModalContext";
-import ModalManager from "@/components/common/Modal/ModalBase/ModalManager";
+// import ModalManager from "@/components/common/Modal/ModalBase/ModalManager";
 import MainPageHeader from "@/components/layout/Header/MainPageHeader";
 import HomeMap from "@/features/components/Home/HomeMap";
 import TodayNews from "@/features/components/Home/TodayNews";
@@ -40,7 +40,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <ModalManager />
+      {/* <ModalManager /> */}
     </ModalProvider>
   );
 }
