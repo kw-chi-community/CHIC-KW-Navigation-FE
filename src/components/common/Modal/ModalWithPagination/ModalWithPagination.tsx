@@ -1,102 +1,75 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ModalHeader from "./ModalHeader";
-import ModalSlider from "./ModalSlider";
-import ModalDescription from "./ModalDescription";
 import ModalFooter from "./ModalFooter";
+import ModalDescription from "./ModalDescription";
+import ModalSlider from "./ModalSlider";
 
 export default function ModalWithPagination({
   isOpen,
   closeModal,
   title,
-  images,
-  description,
+  image, // 단일 이미지
+  description, // 페이지별 텍스트
 }: ModalWithPaginationProps) {
-  const [isVisible, setIsVisible] = useState(false);
-  const [currentPage, setCurrentPage] = useState(0); // currentPage 상태 추가
-  const [startX, setStartX] = useState(0); // 터치 시작 위치
-  const [endX, setEndX] = useState(0); // 터치 종료 위치
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsVisible(true); // 모달 열릴 때 애니메이션 시작
-    } else {
-      setIsVisible(false); // 모달 닫힐 때 애니메이션 초기화
-    }
-  }, [isOpen]);
+  const [currentPage, setCurrentPage] = useState(0); // 현재 페이지 상태 (0 = page1, 1 = page2)
 
   if (!isOpen) return null;
 
-  if (!images || images.length === 0) {
-    console.error("Images array is empty.");
-    return null;
-  }
-
-  // 슬라이드 변경 로직
-  const handlePageChange = (action: "start" | "move" | "end", clientX?: number) => {
-    if (action === "start" && clientX !== undefined) {
-      setStartX(clientX);
-    } else if (action === "move" && clientX !== undefined) {
-      setEndX(clientX);
-    } else if (action === "end") {
-      const swipeDistance = startX - endX;
-
-      if (swipeDistance > 50) {
-        setCurrentPage((prev) => Math.min(prev + 1, images.length - 1));
-      } else if (swipeDistance < -50) {
-        setCurrentPage((prev) => Math.max(prev - 1, 0));
-      }
-
-      setStartX(0);
-      setEndX(0);
+  const handlePageChange = (index: number) => {
+    if (index >= 0 && index < 2) {
+      setCurrentPage(index); // 페이지 상태 업데이트
     }
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div
-        className={`relative bg-white w-[85%] max-w-[350px] h-auto rounded-lg shadow-lg overflow-hidden mx-4 transition-all duration-500 ease-in-out ${
-          isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
-        }`}
-      >
+      <div className="relative bg-white w-[350px] h-[500px] rounded-lg shadow-lg overflow-hidden mx-4">
         {/* 헤더 */}
-        <ModalHeader
-          title={title}
-          closeModal={() => {
-            setIsVisible(false);
-            setTimeout(closeModal, 500);
-          }}
-        />
+        <ModalHeader title={title} closeModal={closeModal} />
 
         {/* 이미지 슬라이더 */}
-        <ModalSlider
-          images={images}
-          currentPage={currentPage}
-          onPageChange={handlePageChange}
-        />
+          <div className="h-[250px] flex items-center justify-center px-4">
+            <ModalSlider
+              currentPage={currentPage}
+              onPageChange={handlePageChange}
+              pages={[
+                {
+                  image,
+                  text: description.page1,
+                },
+                {
+                  image,
+                  text: description.page2,
+                },
+              ]}
+            />
+        </div>
 
-        {/* 페이지네이션 불렛 */}
-        <div className="flex justify-center items-center space-x-1 py-4">
-          {images.map((_, index) => (
+        {/* 페이지네이션 불릿 */}
+        <div className="flex justify-center items-center py-2">
+          {[0, 1].map((index) => (
             <button
               key={index}
-              onClick={() => setCurrentPage(index)} // 불렛 클릭 시 페이지 변경
-              className={`w-3 h-3 rounded-full ${
-                index === currentPage ? "bg-red-500" : "bg-gray-300"
+              onClick={() => handlePageChange(index)}
+              className={`w-3 h-3 rounded-full mx-1 ${
+                currentPage === index ? "bg-red-500" : "bg-gray-300"
               }`}
-            ></button>
+            />
           ))}
         </div>
 
         {/* 텍스트 설명 */}
-        <ModalDescription description={description} />
+        <div className="px-4 pb-4 text-center">
+          <ModalDescription
+            description={description}
+            currentPage={currentPage} // 현재 페이지 상태 전달
+          />
+        </div>
+
+        
 
         {/* 완료 버튼 */}
-        <ModalFooter
-          closeModal={() => {
-            setIsVisible(false);
-            setTimeout(closeModal, 500);
-          }}
-        />
+        <ModalFooter closeModal={closeModal} />
       </div>
     </div>
   );
@@ -106,6 +79,9 @@ interface ModalWithPaginationProps {
   isOpen: boolean;
   closeModal: () => void;
   title: string;
-  images: string[];
-  description: string;
+  image: string; // 단일 이미지
+  description: {
+    page1: string;
+    page2: string;
+  };
 }
