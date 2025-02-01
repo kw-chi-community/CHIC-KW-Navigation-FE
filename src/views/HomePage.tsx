@@ -4,7 +4,6 @@ import HomeMap from "@/features/components/Home/HomeMap";
 import TodayNews from "@/features/components/Home/TodayNews";
 import AroundFacility from "@/features/components/Home/AroundFacility";
 import { Search } from "lucide-react";
-
 import BuildingInfo from "@/features/components/Home/BuildingInfo";
 
 export default function Home() {
