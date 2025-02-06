@@ -19,7 +19,7 @@ export default function BuildingInfo() {
   };
 
   return (
-    <div className="w-full h-[15vh] overflow-x-auto overflow-y-hidden scrollbar-hide">
+    <div className="w-full h-[15vh] overflow-x-auto overflow-y-hidden scrollbar-hide items-center">
       <div className="flex space-x-4 px-4 h-full">
         {buildingList.map((building) => (
           <button
