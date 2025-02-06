@@ -20,7 +20,7 @@ export default function ClassSelector() {
 
   const handleNext = () => {
     if (selectedClassroom) {
-      navigate("/RouteStart", { state: { classroom: selectedClassroom } }); 
+      navigate("/route/route-start", { state: { classroom: selectedClassroom } }); 
     } else {
       alert("강의실을 선택해주세요.");
     }

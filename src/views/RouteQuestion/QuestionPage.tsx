@@ -18,7 +18,7 @@ export default function QuestionPage() {
 
   const handleNext = () => {
     if (selectedFloor) {
-      navigate(`/class-select/${selectedFloor}`); 
+      navigate(`/route/class-select/${selectedFloor}`); 
     }
   };
 

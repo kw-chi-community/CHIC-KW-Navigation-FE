@@ -12,13 +12,6 @@ export default function MainPageHeader() {
 
   return (
     <header className="fixed top-0 w-full flex justify-between items-center px-6 py-3 bg-white z-50 shadow-md container">
-      <div className="flex items-center space-x-4">
-        <img
-          src="/assets/kwayLogo.svg"
-          alt="KwangWoon University Logo"
-          className="w-[100%] h-auto"
-        />
-      </div>
 
       <div className="flex items-center">
         <div className="pl-2 flex flex-col w-[60vw] space-y-2">
