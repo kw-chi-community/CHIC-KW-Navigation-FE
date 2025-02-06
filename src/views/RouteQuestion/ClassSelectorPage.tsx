@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import DropDown from "@/components/common/Dropdown/DropDown";
-import { CLASSROOMS, type ClassRoom } from "@/components/common/Dropdown/classOptions";
+import DropDown from "@/features/components/RouteQuestion/Dropdown/DropDown";
+import { CLASSROOMS, type ClassRoom } from "@/features/components/RouteQuestion/Dropdown/classOptions";
 import RouteQuestionHeader from "@/components/layout/Header/RouteQuestionHeader";
-import RouteNext from "@/components/common/Button/RouteNext";
+import RouteNextButton from "@/components/common/Button/RouteNextButton";
 
 export default function ClassSelector() {
   const { floor } = useParams<{ floor: string }>();
@@ -40,7 +40,7 @@ export default function ClassSelector() {
         />
       </div>
 
-      <RouteNext onClick={handleNext} disabled={!selectedClassroom}
+      <RouteNextButton onClick={handleNext} disabled={!selectedClassroom}
       label="길 안내 시작하기" />
     </div>
   );

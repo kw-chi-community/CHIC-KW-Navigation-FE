@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import DropDown from "@/components/common/Dropdown/DropDown";
-import { FLOOR_OPTIONS, type FloorOption } from "@/components/common/Dropdown/floorOptions";
+import DropDown from "@/features/components/RouteQuestion/Dropdown/DropDown";
+import { FLOOR_OPTIONS, type FloorOption } from "@/features/components/RouteQuestion/Dropdown/floorOptions";
 import RouteQuestionHeader from "@/components/layout/Header/RouteQuestionHeader";
-import RouteNext from "@/components/common/Button/RouteNext";
+import RouteNext from "@/components/common/Button/RouteNextButton";
 
 
 export default function QuestionPage() {

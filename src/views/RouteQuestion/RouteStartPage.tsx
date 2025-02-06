@@ -7,7 +7,7 @@ interface LocationState {
   classroom: string;
 }
 
-export function RouteStart() {
+export default function RouteStartPage() {
   const location = useLocation();
   const state = location.state as LocationState | null;
   const classroom = state?.classroom || "강의실 미선택";
@@ -53,4 +53,3 @@ export function RouteStart() {
   );
 }
 
-export default RouteStart;

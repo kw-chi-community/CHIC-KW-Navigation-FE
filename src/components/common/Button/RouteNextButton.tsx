@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface RouteNextProps {
   onClick: () => void;
   disabled: boolean;
