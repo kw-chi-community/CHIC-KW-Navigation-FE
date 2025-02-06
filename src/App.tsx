@@ -8,8 +8,8 @@ import CafePage from "@/views/AroundShop/CafePage";
 import ConveniencePage from "@/views/AroundShop/ConveniencePage";
 import RestaurantPage from "@/views/AroundShop/RestaurantPage";
 import QuestionPage from "@/views/RouteQuestion/QuestionPage";
-import ClassSelector from "@/views/RouteQuestion/ClassSelector";
-import RouteStart from  "@/views/RouteQuestion/RouteStart";
+import ClassSelectorPage from "@/views/RouteQuestion/ClassSelectorPage";
+import RouteStartPage from  "@/views/RouteQuestion/RouteStartPage";
 
 function App() {
   return (
@@ -27,8 +27,8 @@ function App() {
         <Route path="/around-shop/restaurant" element={<RestaurantPage />} />
 
         <Route path="/route/question" element={<QuestionPage />} />
-        <Route path="/class-select/:floor" element={<ClassSelector />} />
-        <Route path="/RouteStart" element={<RouteStart />} />
+        <Route path="/class-select/:floor" element={<ClassSelectorPage />} />
+        <Route path="/RouteStart" element={<RouteStartPage />} />
       </Routes>
     </BrowserRouter>
   );
