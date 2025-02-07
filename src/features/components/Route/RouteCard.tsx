@@ -34,7 +34,7 @@ export default function RouteCard({ type, duration, distance, description, class
           <span className="text-lg font-bold">{duration}</span>
           <span className="text-xs ml-1 text-gray-600">{distance}</span>
         </div>
-        <p className="mt-1 text-xs text-gray-500 line-clamp-2">{description}</p>
+        <p className="mt-1 text-[8px] text-gray-500 line-clamp-2">{description}</p>
       </div>
     </div>
   );

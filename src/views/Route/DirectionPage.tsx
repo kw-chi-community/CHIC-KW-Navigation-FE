@@ -1,7 +1,7 @@
 import DirectionHeader from '@/components/layout/Header/DirectionHeader'
 import RouteCard from '@/features/components/Route/RouteCard'
 
-function DirectionPage() {
+export default function DirectionPage() {
   return (
     <div className="container h-[1000px] bg-white text-black">
         <DirectionHeader />
@@ -15,5 +15,3 @@ function DirectionPage() {
     </div>
   )
 }
-
-export default DirectionPage
