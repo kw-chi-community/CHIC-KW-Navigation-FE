@@ -4,12 +4,11 @@ import HomeMap from "@/features/components/Home/HomeMap";
 import TodayNews from "@/features/components/Home/TodayNews";
 import AroundFacility from "@/features/components/Home/AroundFacility";
 import { Search } from "lucide-react";
-
 import BuildingInfo from "@/features/components/Home/BuildingInfo";
 
 export default function Home() {
   return (
-    <div className="container w-full">
+    <div className="container w-full scrollbar-hide">
       <ModalProvider>
         <div className="container h-auto bg-white text-black">
           <MainPageHeader />
@@ -20,9 +19,9 @@ export default function Home() {
             <TodayNews />
           </div>
           <HomeMap />
-          <h6 className="text-xs font-normal mt-[5px] ml-2">
+          <h6 className="text-xs font-normal mt-[5px] pl-6">
             * 방문을 원하시는 건물을 지도 혹은 우측 상단의{" "}
-            <Search className="w-4 inline-block" /> 를 눌러 검색하세요😊
+            <Search className="w-3 inline-block" /> 를 눌러 검색하세요😊
           </h6>
           <div className="flex flex-col items-center w-full pt-[2rem] space-y-8 text-left">
             <div className="container">
