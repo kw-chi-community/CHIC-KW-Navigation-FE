@@ -7,7 +7,7 @@ const facilities = [
   { id: 1, label: "편의점", icon: "/assets/icons/convenience-store.svg", path: "/around-shop/convenience-store" },
   { id: 2, label: "카페", icon: "/assets/icons/cafe.svg", path: "/around-shop/cafe" },
   { id: 3, label: "식당", icon: "/assets/icons/restaurant.svg", path: "/around-shop/restaurant" },
-  { id: 4, label: "편의시설", icon: "/assets/icons/path.svg", path: "/around-shop/amenity" },
+  { id: 4, label: "편의시설", icon: "/assets/icons/amenities.svg", path: "/around-shop/amenity" },
 ];
 
   return (
